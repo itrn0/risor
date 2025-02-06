@@ -5,25 +5,87 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"path/filepath"
-	"strings"
-	"sync"
-	"sync/atomic"
-
 	"github.com/itrn0/risor/compiler"
 	"github.com/itrn0/risor/errz"
 	"github.com/itrn0/risor/importer"
 	"github.com/itrn0/risor/object"
 	"github.com/itrn0/risor/op"
+	"log/slog"
+	"path/filepath"
+	"strings"
+	"sync"
+	"sync/atomic"
 )
 
 const (
-	MaxArgs       = 256
-	MaxFrameDepth = 1024
-	MaxStackDepth = 1024
-	StopSignal    = -1
-	MB            = 1024 * 1024
+	MaxArgs         = 256
+	MaxFrameDepth   = 256 // 1024
+	MaxStackDepth   = 256 // 1024
+	StopSignal      = -1
+	MB              = 1024 * 1024
+	MaxMemoryUsage  = 1 * MB    // Maximum memory volume that can be used
+	MaxInstructions = 1_000_000 // The maximum number of executable instructions
 )
+
+/* ------------------------- */
+func (vm *VirtualMachine) pop() object.Object {
+	size := vm.stackElSize[vm.sp]
+	vm.stackElSize[vm.sp] = 0
+	//
+	obj := vm.stack[vm.sp]
+	vm.stack[vm.sp] = nil
+	vm.sp--
+	//
+	vm.memoryUsage -= size
+	return obj
+}
+
+func (vm *VirtualMachine) push(obj object.Object) {
+	size, err := varSize(obj)
+	if err != nil {
+		vm.limitErr = fmt.Errorf("unsupported variable type: %v", err)
+		atomic.StoreInt32(&vm.halt, 1)
+		return
+	}
+	if vm.memoryUsage+size > MaxMemoryUsage {
+		vm.limitErr = fmt.Errorf("memory limit exceeded")
+		slog.Warn(fmt.Sprintf(">>> memory limit exceeded (usage: %d, limit: %d)", vm.memoryUsage+size, MaxMemoryUsage))
+		atomic.StoreInt32(&vm.halt, 1)
+		return
+	}
+	vm.sp++
+	vm.stack[vm.sp] = obj
+	//
+	vm.stackElSize[vm.sp] = size
+	vm.memoryUsage += size
+	if vm.memoryUsage > vm.maxMemoryUsage {
+		vm.maxMemoryUsage = vm.memoryUsage
+	}
+}
+
+func (vm *VirtualMachine) swap(pos int) {
+	otherIndex := vm.sp - pos
+
+	// Swap elements
+	tos := vm.stack[vm.sp]
+	other := vm.stack[otherIndex]
+	vm.stack[otherIndex] = tos
+	vm.stack[vm.sp] = other
+
+	// Swap sizes
+	tosSize := vm.stackElSize[vm.sp]
+	otherSize := vm.stackElSize[otherIndex]
+	vm.stackElSize[otherIndex] = tosSize
+	vm.stackElSize[vm.sp] = otherSize
+}
+
+func (vm *VirtualMachine) fetch() uint16 {
+	ip := vm.ip
+	vm.ip++
+	return uint16(vm.activeCode.Instructions[ip])
+}
+
+/* ------------------------- */
 
 type VirtualMachine struct {
 	ip           int // instruction pointer
@@ -45,6 +107,12 @@ type VirtualMachine struct {
 	tmp          [MaxArgs]object.Object
 	stack        [MaxStackDepth]object.Object
 	frames       [MaxFrameDepth]frame
+	//
+	stackElSize    [MaxStackDepth]int
+	memoryUsage    int
+	instructions   int64
+	limitErr       error
+	maxMemoryUsage int
 }
 
 // New creates a new Virtual Machine.
@@ -52,6 +120,7 @@ func New(main *compiler.Code, options ...Option) *VirtualMachine {
 	vm := &VirtualMachine{
 		sp:           -1,
 		ip:           0,
+		instructions: 0,
 		fp:           0,
 		halt:         0,
 		main:         main,
@@ -178,9 +247,13 @@ func (vm *VirtualMachine) GlobalNames() []string {
 // will be on the top of the stack.
 func (vm *VirtualMachine) eval(ctx context.Context) error {
 	// Run to the end of the active code
+	// vm.instructions = 0
 	for vm.ip < len(vm.activeCode.Instructions) {
 
 		if atomic.LoadInt32(&vm.halt) == 1 {
+			if vm.limitErr != nil {
+				return vm.limitErr
+			}
 			return ctx.Err()
 		}
 
@@ -624,7 +697,15 @@ func (vm *VirtualMachine) eval(ctx context.Context) error {
 		default:
 			return errz.EvalErrorf("eval error: unknown opcode: %d", opcode)
 		}
+
+		atomic.AddInt64(&vm.instructions, 1)
+		if vm.instructions >= MaxInstructions {
+			return errz.EvalErrorf("eval error: max instructions limit of %d exceeded",
+				MaxInstructions)
+		}
 	}
+
+	// slog.Info("vm.eval: done", "max_mem", vm.maxMemoryUsage)
 	return nil
 }
 
@@ -655,32 +736,6 @@ func (vm *VirtualMachine) TOS() (object.Object, bool) {
 		return vm.stack[vm.sp], true
 	}
 	return nil, false
-}
-
-func (vm *VirtualMachine) pop() object.Object {
-	obj := vm.stack[vm.sp]
-	vm.stack[vm.sp] = nil
-	vm.sp--
-	return obj
-}
-
-func (vm *VirtualMachine) push(obj object.Object) {
-	vm.sp++
-	vm.stack[vm.sp] = obj
-}
-
-func (vm *VirtualMachine) swap(pos int) {
-	otherIndex := vm.sp - pos
-	tos := vm.stack[vm.sp]
-	other := vm.stack[otherIndex]
-	vm.stack[otherIndex] = tos
-	vm.stack[vm.sp] = other
-}
-
-func (vm *VirtualMachine) fetch() uint16 {
-	ip := vm.ip
-	vm.ip++
-	return uint16(vm.activeCode.Instructions[ip])
 }
 
 // Call a function with the given arguments. If isolation between VMs is
@@ -970,6 +1025,7 @@ func (vm *VirtualMachine) Clone() (*VirtualMachine, error) {
 		sp:           -1,
 		ip:           0,
 		fp:           0,
+		instructions: 0,
 		running:      false,
 		importer:     vm.importer,
 		main:         vm.main,
