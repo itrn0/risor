@@ -1026,7 +1026,7 @@ func (vm *VirtualMachine) Clone() (*VirtualMachine, error) {
 		sp:           -1,
 		ip:           0,
 		fp:           0,
-		instructions: 0,
+		instructions: vm.instructions,
 		running:      false,
 		importer:     vm.importer,
 		main:         vm.main,
