@@ -4,10 +4,10 @@ import (
 	"context"
 	"io"
 
-	"github.com/olekukonko/tablewriter"
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/os"
+	
 )
 
 func CreateWriter(ctx context.Context, args ...object.Object) object.Object {

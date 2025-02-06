@@ -1,6 +1,6 @@
 package risor
 
-import "github.com/risor-io/risor/importer"
+import "github.com/itrn0/risor/importer"
 
 // Option describes a function used to configure a Risor evaluation.
 type Option func(*Config)

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/token"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/token"
 )
 
 // ErrorOpts is a struct that holds a variety of error data.

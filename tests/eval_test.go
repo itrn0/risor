@@ -8,9 +8,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/risor-io/risor"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/parser"
+	"github.com/itrn0/risor"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/parser"
 	"github.com/stretchr/testify/require"
 )
 

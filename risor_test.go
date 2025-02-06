@@ -5,10 +5,10 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/object"
-	ros "github.com/risor-io/risor/os"
-	"github.com/risor-io/risor/parser"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/object"
+	ros "github.com/itrn0/risor/os"
+	"github.com/itrn0/risor/parser"
 	"github.com/stretchr/testify/require"
 )
 

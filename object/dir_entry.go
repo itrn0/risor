@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
-	ros "github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
+	ros "github.com/itrn0/risor/os"
 )
 
 type DirEntry struct {

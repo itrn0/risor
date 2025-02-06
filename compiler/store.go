@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/op"
 )
 
 // MarshalCode converts a Code object into a JSON representation.

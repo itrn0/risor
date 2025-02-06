@@ -5,9 +5,9 @@ import (
 	"fmt"
 
 	"github.com/fatih/color"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/op"
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
+	"github.com/itrn0/risor/os"
 )
 
 var _ object.Object = (*Color)(nil)

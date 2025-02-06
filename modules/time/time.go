@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/object"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/object"
 )
 
 func Now(ctx context.Context, args ...object.Object) object.Object {

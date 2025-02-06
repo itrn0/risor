@@ -10,8 +10,8 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/errz"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/errz"
 )
 
 var kindConverters = map[reflect.Kind]TypeConverter{

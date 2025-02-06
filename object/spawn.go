@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/risor-io/risor/errz"
+	"github.com/itrn0/risor/errz"
 )
 
 type callFuncAdapter struct {

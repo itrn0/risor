@@ -1,4 +1,4 @@
-module github.com/risor-io/risor
+module github.com/itrn0/risor
 
 go 1.22.0
 

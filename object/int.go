@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
 )
 
 // Int wraps int64 and implements Object and Hashable interfaces.

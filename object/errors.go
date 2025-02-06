@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/risor-io/risor/errz"
+	"github.com/itrn0/risor/errz"
 )
 
 // Deprecated: retained for backwards compatibility only. Prefer errz.ArgsError.

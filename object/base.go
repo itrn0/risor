@@ -1,6 +1,6 @@
 package object
 
-import "github.com/risor-io/risor/errz"
+import "github.com/itrn0/risor/errz"
 
 type base struct{}
 

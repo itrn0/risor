@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/risor-io/risor/errz"
+	"github.com/itrn0/risor/errz"
 	"github.com/stretchr/testify/require"
 )
 

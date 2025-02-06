@@ -5,8 +5,8 @@ import (
 	_ "embed"
 	"fmt"
 
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/os"
 )
 
 func Printf(ctx context.Context, args ...object.Object) object.Object {

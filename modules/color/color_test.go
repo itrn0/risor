@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/fatih/color"
-	"github.com/risor-io/risor/object"
+	"github.com/itrn0/risor/object"
 	"github.com/stretchr/testify/require"
 )
 

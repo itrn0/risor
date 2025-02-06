@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	ros "github.com/risor-io/risor/os"
+	ros "github.com/itrn0/risor/os"
 )
 
 var _ ros.FS = (*Filesystem)(nil)

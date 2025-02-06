@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/op"
 )
 
 // GoType wraps a single native Go type to make it easier to work with in Risor

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/risor-io/risor"
-	ros "github.com/risor-io/risor/os"
+	"github.com/itrn0/risor"
+	ros "github.com/itrn0/risor/os"
 )
 
 func main() {

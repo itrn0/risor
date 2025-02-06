@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
 )
 
 type Module struct {

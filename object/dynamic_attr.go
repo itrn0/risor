@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
 )
 
 // DynamicAttr is an Object that represents an attribute that can be dynamically

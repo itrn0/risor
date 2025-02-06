@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/risor-io/risor/object"
+	"github.com/itrn0/risor/object"
 )
 
 func NewHTTPClientFromParams(params *object.Map) (*http.Client, error) {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
 )
 
 // Byte wraps byte and implements Object and Hashable interface.

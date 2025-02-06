@@ -10,10 +10,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/risor-io/risor/ast"
-	"github.com/risor-io/risor/internal/tmpl"
-	"github.com/risor-io/risor/lexer"
-	"github.com/risor-io/risor/token"
+	"github.com/itrn0/risor/ast"
+	"github.com/itrn0/risor/internal/tmpl"
+	"github.com/itrn0/risor/lexer"
+	"github.com/itrn0/risor/token"
 )
 
 type (

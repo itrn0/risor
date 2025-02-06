@@ -3,8 +3,8 @@ package object
 import (
 	"fmt"
 
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/op"
 )
 
 // Bool wraps bool and implements Object and Hashable interface.

@@ -8,9 +8,9 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/parser"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/parser"
 )
 
 // Importer is an interface used to import Risor code modules

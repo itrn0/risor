@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/risor-io/risor/compiler"
+	"github.com/itrn0/risor/compiler"
 	"github.com/stretchr/testify/require"
 )
 

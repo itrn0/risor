@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/risor-io/risor/token"
+	"github.com/itrn0/risor/token"
 )
 
 // Var is a statement that assigns a value to a variable. It may be a

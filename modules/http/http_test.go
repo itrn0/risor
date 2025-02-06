@@ -3,7 +3,7 @@ package http
 import (
 	"testing"
 
-	"github.com/risor-io/risor/object"
+	"github.com/itrn0/risor/object"
 	"github.com/stretchr/testify/require"
 )
 

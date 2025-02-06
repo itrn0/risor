@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/risor-io/risor/ast"
+	"github.com/itrn0/risor/ast"
 )
 
 func testVarStatement(t *testing.T, s *ast.Var, name string) bool {

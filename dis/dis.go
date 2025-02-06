@@ -9,9 +9,9 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/olekukonko/tablewriter"
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/op"
+	
 )
 
 var (
