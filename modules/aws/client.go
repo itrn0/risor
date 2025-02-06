@@ -44,9 +44,9 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/aws/aws-sdk-go-v2/service/wafv2"
 	"github.com/aws/aws-sdk-go-v2/service/xray"
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
 )
 
 type Client struct {

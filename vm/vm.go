@@ -5,16 +5,17 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/itrn0/risor/compiler"
-	"github.com/itrn0/risor/errz"
-	"github.com/itrn0/risor/importer"
-	"github.com/itrn0/risor/object"
-	"github.com/itrn0/risor/op"
 	"log/slog"
 	"path/filepath"
 	"strings"
 	"sync"
 	"sync/atomic"
+
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/importer"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
 )
 
 const (

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/risor-io/risor"
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/dis"
-	"github.com/risor-io/risor/parser"
+	"github.com/itrn0/risor"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/dis"
+	"github.com/itrn0/risor/parser"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/fatih/color"
+	"github.com/itrn0/risor"
+	"github.com/itrn0/risor/cmd/risor/repl"
+	"github.com/itrn0/risor/errz"
+	ros "github.com/itrn0/risor/os"
 	"github.com/mitchellh/go-homedir"
-	"github.com/risor-io/risor"
-	"github.com/risor-io/risor/cmd/risor/repl"
-	"github.com/risor-io/risor/errz"
-	ros "github.com/risor-io/risor/os"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

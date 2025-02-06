@@ -14,10 +14,10 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/fatih/color"
 	"github.com/hokaccha/go-prettyjson"
+	"github.com/itrn0/risor/object"
+	ros "github.com/itrn0/risor/os"
+	"github.com/itrn0/risor/os/s3fs"
 	"github.com/mattn/go-isatty"
-	"github.com/risor-io/risor/object"
-	ros "github.com/risor-io/risor/os"
-	"github.com/risor-io/risor/os/s3fs"
 	"github.com/spf13/viper"
 )
 

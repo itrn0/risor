@@ -8,8 +8,8 @@ import (
 	_ "embed"
 
 	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/object"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/object"
 )
 
 func ConfigFunc(ctx context.Context, args ...object.Object) object.Object {

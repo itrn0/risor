@@ -20,7 +20,7 @@ import (
 )
 
 const (
-	importRisorObject = "github.com/risor-io/risor/object"
+	importRisorObject = "github.com/itrn0/risor/object"
 )
 
 type Options struct {

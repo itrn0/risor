@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/os"
 )
 
 //risor:generate no-module-func

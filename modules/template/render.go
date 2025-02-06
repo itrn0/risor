@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/os"
 )
 
 const (

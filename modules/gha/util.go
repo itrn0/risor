@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"strings"
 
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/os"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/os"
 )
 
 func printableValue(obj object.Object) any {

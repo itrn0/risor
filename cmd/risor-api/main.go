@@ -11,8 +11,8 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/risor-io/risor"
-	"github.com/risor-io/risor/errz"
+	"github.com/itrn0/risor"
+	"github.com/itrn0/risor/errz"
 )
 
 const MaxCodeSize = 100 * 1024

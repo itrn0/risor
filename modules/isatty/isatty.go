@@ -6,7 +6,6 @@ import (
 
 	"github.com/itrn0/risor/object"
 	ros "github.com/itrn0/risor/os"
-	
 )
 
 func IsTerminal(ctx context.Context, args ...object.Object) object.Object {

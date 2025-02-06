@@ -14,7 +14,7 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
-	ros "github.com/risor-io/risor/os"
+	ros "github.com/itrn0/risor/os"
 )
 
 var (

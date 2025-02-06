@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/op"
 )
 
 const PGX_CONN = object.Type("pgx.conn")

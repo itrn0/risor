@@ -11,11 +11,11 @@ import (
 	"atomicgo.dev/keyboard"
 	"atomicgo.dev/keyboard/keys"
 	"github.com/fatih/color"
-	"github.com/risor-io/risor"
-	"github.com/risor-io/risor/compiler"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/parser"
-	"github.com/risor-io/risor/vm"
+	"github.com/itrn0/risor"
+	"github.com/itrn0/risor/compiler"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/parser"
+	"github.com/itrn0/risor/vm"
 )
 
 const (

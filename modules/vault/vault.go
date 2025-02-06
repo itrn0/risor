@@ -9,10 +9,10 @@ import (
 
 	"github.com/hashicorp/vault-client-go"
 	"github.com/hashicorp/vault-client-go/schema"
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
 )
 
 const VAULT object.Type = "vault"

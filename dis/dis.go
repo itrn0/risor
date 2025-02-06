@@ -8,10 +8,11 @@ import (
 	"io"
 	"strings"
 
+	"github.com/olekukonko/tablewriter"
+
 	"github.com/fatih/color"
 	"github.com/itrn0/risor/compiler"
 	"github.com/itrn0/risor/op"
-	
 )
 
 var (

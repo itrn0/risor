@@ -5,10 +5,10 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/risor-io/risor/arg"
-	"github.com/risor-io/risor/errz"
-	"github.com/risor-io/risor/object"
-	"github.com/risor-io/risor/op"
+	"github.com/itrn0/risor/arg"
+	"github.com/itrn0/risor/errz"
+	"github.com/itrn0/risor/object"
+	"github.com/itrn0/risor/op"
 )
 
 const TEMPLATE object.Type = "template"

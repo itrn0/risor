@@ -3,8 +3,8 @@ package pgx
 import (
 	"context"
 
+	"github.com/itrn0/risor/object"
 	"github.com/jackc/pgx/v5"
-	"github.com/risor-io/risor/object"
 )
 
 func Connect(ctx context.Context, args ...object.Object) object.Object {
