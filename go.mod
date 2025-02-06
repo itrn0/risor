@@ -8,7 +8,7 @@ require (
 	github.com/fatih/color v1.17.0
 	github.com/mattn/go-isatty v0.0.20
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/itrn0/risor/modules/gha v1.7.2
+	github.com/itrn0/risor/modules/gha v1.7.3
 	github.com/stretchr/testify v1.9.0
 	gopkg.in/yaml.v3 v3.0.1
 )

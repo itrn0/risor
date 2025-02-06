@@ -1,12 +1,12 @@
-module github.com/risor-io/risor/modules/carbon
+module github.com/itrn0/risor/modules/carbon
 
 go 1.22.0
 
 toolchain go1.23.1
 
-replace github.com/risor-io/risor => ../..
+replace github.com/itrn0/risor => ../..
 
-require github.com/risor-io/risor v1.7.0
+require github.com/itrn0/risor v1.7.0
 
 require (
 	github.com/golang-module/carbon/v2 v2.3.12

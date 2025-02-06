@@ -1,4 +1,4 @@
-module github.com/risor-io/risor/cmd/risor-modgen
+module github.com/itrn0/risor/cmd/risor-modgen
 
 go 1.22
 

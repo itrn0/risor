@@ -1,14 +1,14 @@
-module github.com/risor-io/risor/modules/template
+module github.com/itrn0/risor/modules/template
 
 go 1.22.0
 
 toolchain go1.22.2
 
-replace github.com/risor-io/risor => ../..
+replace github.com/itrn0/risor => ../..
 
 require (
 	github.com/Masterminds/sprig/v3 v3.3.0
-	github.com/risor-io/risor v1.7.0
+	github.com/itrn0/risor v1.7.0
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/apimachinery v0.31.0
 	k8s.io/client-go v0.31.0

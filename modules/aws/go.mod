@@ -1,10 +1,10 @@
-module github.com/risor-io/risor/modules/aws
+module github.com/itrn0/risor/modules/aws
 
 go 1.22.0
 
 toolchain go1.23.1
 
-replace github.com/risor-io/risor => ../..
+replace github.com/itrn0/risor => ../..
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.32.2
@@ -46,7 +46,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.32.2
 	github.com/aws/aws-sdk-go-v2/service/wafv2 v1.52.0
 	github.com/aws/aws-sdk-go-v2/service/xray v1.27.5
-	github.com/risor-io/risor v1.7.0
+	github.com/itrn0/risor v1.7.0
 )
 
 require (

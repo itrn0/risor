@@ -1,14 +1,14 @@
-module github.com/risor-io/risor/examples/go/struct
+module github.com/itrn0/risor/examples/go/struct
 
 go 1.22.0
 
 toolchain go1.23.1
 
-replace github.com/risor-io/risor => ../../..
+replace github.com/itrn0/risor => ../../..
 
 require (
 	github.com/fatih/color v1.17.0
-	github.com/risor-io/risor v1.7.0
+	github.com/itrn0/risor v1.7.0
 )
 
 require (

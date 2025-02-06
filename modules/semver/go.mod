@@ -1,14 +1,14 @@
-module github.com/risor-io/risor/modules/semver
+module github.com/itrn0/risor/modules/semver
 
 go 1.22.0
 
 toolchain go1.23.1
 
-replace github.com/risor-io/risor => ../..
+replace github.com/itrn0/risor => ../..
 
 require (
 	github.com/blang/semver/v4 v4.0.0
-	github.com/risor-io/risor v1.7.0
+	github.com/itrn0/risor v1.7.0
 	github.com/stretchr/testify v1.9.0
 )
 

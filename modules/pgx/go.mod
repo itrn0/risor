@@ -1,14 +1,14 @@
-module github.com/risor-io/risor/modules/pgx
+module github.com/itrn0/risor/modules/pgx
 
 go 1.22.0
 
 toolchain go1.23.1
 
-replace github.com/risor-io/risor => ../..
+replace github.com/itrn0/risor => ../..
 
 require (
 	github.com/jackc/pgx/v5 v5.6.0
-	github.com/risor-io/risor v1.7.0
+	github.com/itrn0/risor v1.7.0
 )
 
 require (
